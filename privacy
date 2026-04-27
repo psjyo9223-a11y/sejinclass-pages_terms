@@ -1,0 +1,543 @@
+<style>
+.pp-wrap *,
+.pp-wrap *::before,
+.pp-wrap *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.pp-wrap {
+  font-size: 15px;
+  line-height: 1.85;
+  color: #1e2624;
+  background: #f5fafa;
+  padding: 0 0 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.pp-header {
+  background: #ffffff;
+  border-bottom: 1px solid #daeee9;
+  padding: 36px 24px 28px;
+  text-align: center;
+}
+.pp-logo-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #4dc4b0;
+  background: #e6f7f5;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+.pp-header h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1e2624;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.pp-header-meta {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #5a6e6b;
+  font-weight: 300;
+}
+
+.pp-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.pp-toc {
+  background: #ffffff;
+  border: 1px solid #daeee9;
+  border-radius: 12px;
+  padding: 22px 26px;
+  margin: 28px 0 0;
+}
+.pp-toc-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #4dc4b0;
+  margin-bottom: 12px;
+}
+.pp-toc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 20px;
+}
+.pp-toc-grid a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #5a6e6b;
+  text-decoration: none;
+  padding: 5px 0;
+  transition: color 0.18s;
+}
+.pp-toc-grid a:hover { color: #4dc4b0; }
+.pp-toc-n {
+  font-size: 10px;
+  font-weight: 700;
+  color: #4dc4b0;
+  background: #e6f7f5;
+  padding: 2px 7px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.pp-article {
+  background: #ffffff;
+  border: 1px solid #daeee9;
+  border-radius: 12px;
+  padding: 28px 24px;
+  margin-top: 14px;
+}
+.pp-art-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.pp-art-badge {
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  background: #4dc4b0;
+  padding: 4px 13px;
+  border-radius: 20px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.pp-art-head h2 {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #5a6e6b;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+.pp-article p {
+  font-size: 14px;
+  color: #5a6e6b;
+  line-height: 1.9;
+  margin-bottom: 10px;
+}
+.pp-article p:last-child { margin-bottom: 0; }
+
+.pp-num-list {
+  list-style: none;
+  counter-reset: nl;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+.pp-num-list > li {
+  counter-increment: nl;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 11px 0;
+  border-bottom: 1px solid #daeee9;
+  font-size: 14px;
+  color: #5a6e6b;
+  line-height: 1.85;
+  list-style: none;
+}
+.pp-num-list > li:last-child { border-bottom: none; padding-bottom: 0; }
+.pp-num-list > li:first-child { padding-top: 0; }
+.pp-num-list > li::before {
+  content: counter(nl);
+  font-size: 10px;
+  font-weight: 700;
+  color: #4dc4b0;
+  background: #e6f7f5;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.pp-wrap strong { color: #1e2624; font-weight: 500; }
+
+.pp-sub-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 8px;
+  padding-left: 4px;
+}
+.pp-sub-list li {
+  font-size: 13.5px;
+  color: #5a6e6b;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.75;
+  list-style: none;
+}
+.pp-sub-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #4dc4b0;
+}
+
+.pp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 13px;
+}
+.pp-table th {
+  background: #e6f7f5;
+  color: #2a6b60;
+  font-weight: 700;
+  padding: 10px 12px;
+  border: 1px solid #b2e4dc;
+  text-align: left;
+  font-size: 12px;
+}
+.pp-table td {
+  padding: 10px 12px;
+  border: 1px solid #daeee9;
+  color: #5a6e6b;
+  vertical-align: top;
+  line-height: 1.7;
+}
+.pp-table tr:nth-child(even) td { background: #f5fafa; }
+
+.pp-highlight-box {
+  background: #e6f7f5;
+  border: 1px solid #b2e4dc;
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin-top: 12px;
+  font-size: 13.5px;
+  color: #2a6b60;
+  line-height: 1.85;
+}
+
+.pp-warn-box {
+  background: #fff8e6;
+  border: 1px solid #f0d080;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-top: 12px;
+  font-size: 13.5px;
+  color: #7a5a00;
+  line-height: 1.85;
+}
+
+.pp-biz-row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid #daeee9;
+  font-size: 13.5px;
+}
+.pp-biz-row:last-child { border-bottom: none; }
+.pp-biz-key { color: #4dc4b0; font-weight: 500; font-size: 12.5px; }
+.pp-biz-val { color: #5a6e6b; }
+
+.pp-addendum {
+  background: #e6f7f5;
+  border: 1px solid #b2e4dc;
+  border-radius: 12px;
+  padding: 18px 26px;
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pp-add-label { font-size: 11px; font-weight: 700; color: #4dc4b0; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 3px; }
+.pp-add-sub { font-size: 13px; color: #5a6e6b; }
+.pp-add-date { font-size: 15px; font-weight: 700; color: #4dc4b0; }
+
+.pp-footer {
+  border-top: 1px solid #daeee9;
+  background: #ffffff;
+  text-align: center;
+  padding: 20px;
+  font-size: 12px;
+  color: #5a6e6b;
+  font-weight: 300;
+  margin-top: 14px;
+  border-radius: 0 0 12px 12px;
+}
+
+@media (max-width: 520px) {
+  .pp-toc-grid { grid-template-columns: 1fr; }
+  .pp-addendum { flex-direction: column; }
+  .pp-article { padding: 22px 16px; }
+  .pp-biz-row { grid-template-columns: 100px 1fr; }
+  .pp-table { font-size: 12px; }
+  .pp-table th, .pp-table td { padding: 8px; }
+}
+</style>
+
+<div class="pp-wrap">
+  <div class="pp-header">
+    <div class="pp-logo-tag">SEJINCLASS</div>
+    <h1>개인정보처리방침</h1>
+    <p class="pp-header-meta">Privacy Policy · 시행일 2026. 05. 01</p>
+  </div>
+
+  <div class="pp-inner">
+
+    <nav class="pp-toc">
+      <div class="pp-toc-label">목차</div>
+      <div class="pp-toc-grid">
+        <a href="#pp-a1"><span class="pp-toc-n">01</span>수집하는 개인정보</a>
+        <a href="#pp-a2"><span class="pp-toc-n">02</span>수집 및 이용 목적</a>
+        <a href="#pp-a3"><span class="pp-toc-n">03</span>보유 및 이용기간</a>
+        <a href="#pp-a4"><span class="pp-toc-n">04</span>제3자 제공</a>
+        <a href="#pp-a5"><span class="pp-toc-n">05</span>처리 위탁</a>
+        <a href="#pp-a6"><span class="pp-toc-n">06</span>이용자의 권리</a>
+        <a href="#pp-a7"><span class="pp-toc-n">07</span>쿠키 및 분석도구</a>
+        <a href="#pp-a8"><span class="pp-toc-n">08</span>개인정보보호책임자</a>
+      </div>
+    </nav>
+
+    <!-- 제1조 -->
+    <section class="pp-article" id="pp-a1">
+      <div class="pp-art-head">
+        <span class="pp-art-badge">제1조</span>
+        <h2>수집하는 개인정보 항목</h2>
+      </div>
+      <table class="pp-table">
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>수집 항목</th>
+            <th>수집 방법</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>회원가입</strong></td>
+            <td>이름, 이메일 주소, 비밀번호</td>
+            <td>회원가입 양식</td>
+          </tr>
+          <tr>
+            <td><strong>서비스 이용</strong></td>
+            <td>수강 이력, 학습 진도, 접속 로그</td>
+            <td>서비스 이용 중 자동 수집</td>
+          </tr>
+          <tr>
+            <td><strong>결제</strong></td>
+            <td>결제수단 정보, 거래 내역</td>
+            <td>결제 시 PG사(웰컴페이먼츠) 연동</td>
+          </tr>
+          <tr>
+            <td><strong>배송</strong></td>
+            <td>수령인 이름, 주소, 연락처</td>
+            <td>상품 주문 시 입력</td>
+          </tr>
+          <tr>
+            <td><strong>고객상담</strong></td>
+            <td>문의 내용, 이메일, 이름</td>
+            <td>채널톡 상담 시 입력</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pp-warn-box">
+        회사는 만 14세 미만 아동의 개인정보를 수집하지 않습니다. 만 14세 미만은 서비스 이용이 제한됩니다.
+      </div>
+    </section>
+
+    <!-- 제2조 -->
+    <section class="pp-article" id="pp-a2">
+      <div class="pp-art-head">
+        <span class="pp-art-badge">제2조</span>
+        <h2>수집 및 이용 목적</h2>
+      </div>
+      <ul class="pp-num-list">
+        <li><span>회원 가입 및 본인 확인, 서비스 제공</span></li>
+        <li><span>강의 수강 및 학습 이력 관리</span></li>
+        <li><span>결제 처리 및 환불 처리</span></li>
+        <li><span>교재·상품 배송</span></li>
+        <li><span>고객 문의 응대 및 불만 처리</span></li>
+        <li><span>서비스 개선 및 신규 서비스 개발</span></li>
+        <li><span>법령 및 약관 위반 행위 방지</span></li>
+      </ul>
+    </section>
+
+    <!-- 제3조 -->
+    <section class="pp-article" id="pp-a3">
+      <div class="pp-art-head">
+        <span class="pp-art-badge">제3조</span>
+        <h2>보유 및 이용기간</h2>
+      </div>
+      <table class="pp-table">
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>보유기간</th>
+            <th>근거</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>회원 정보</strong></td>
+            <td>회원 탈퇴 시까지</td>
+            <td>서비스 제공</td>
+          </tr>
+          <tr>
+            <td><strong>결제·거래 기록</strong></td>
+            <td>5년</td>
+            <td>전자상거래법</td>
+          </tr>
+          <tr>
+            <td><strong>소비자 불만·분쟁 기록</strong></td>
+            <td>3년</td>
+            <td>전자상거래법</td>
+          </tr>
+          <tr>
+            <td><strong>접속 로그</strong></td>
+            <td>3개월</td>
+            <td>통신비밀보호법</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pp-highlight-box">
+        보유기간 종료 후 해당 정보는 지체 없이 파기하며, 전자적 파일은 복구 불가능한 방법으로 삭제합니다.
+      </div>
+    </section>
+
+    <!-- 제4조 -->
+    <section class="pp-article" id="pp-a4">
+      <div class="pp-art-head">
+        <span class="pp-art-badge">제4조</span>
+        <h2>개인정보의 제3자 제공</h2>
+      </div>
+      <p>회사는 원칙적으로 이용자의 개인정보를 외부에 제공하지 않습니다. 단, 아래의 경우는 예외로 합니다.</p>
+      <ul class="pp-num-list">
+        <li><span>이용자가 사전에 동의한 경우</span></li>
+        <li><span>법령에 의거하거나 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관이 요구하는 경우</span></li>
+      </ul>
+    </section>
+
+    <!-- 제5조 -->
+    <section class="pp-article" id="pp-a5">
+      <div class="pp-art-head">
+        <span class="pp-art-badge">제5조</span>
+        <h2>개인정보 처리 위탁</h2>
+      </div>
+      <p>회사는 서비스 제공을 위해 아래와 같이 개인정보 처리를 위탁합니다.</p>
+      <table class="pp-table">
+        <thead>
+          <tr>
+            <th>수탁업체</th>
+            <th>위탁 업무</th>
+            <th>보유기간</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>웰컴페이먼츠</strong></td>
+            <td>결제 처리 및 거래 내역 관리</td>
+            <td>관련 법령에 따름</td>
+          </tr>
+          <tr>
+            <td><strong>채널코퍼레이션 (채널톡)</strong></td>
+            <td>고객 상담 및 문의 처리</td>
+            <td>위탁 계약 종료 시까지</td>
+          </tr>
+          <tr>
+            <td><strong>Google LLC</strong></td>
+            <td>방문자 분석 (Google Analytics)</td>
+            <td>수집일로부터 26개월</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 제6조 -->
+    <section class="pp-article" id="pp-a6">
+      <div class="pp-art-head">
+        <span class="pp-art-badge">제6조</span>
+        <h2>이용자의 권리</h2>
+      </div>
+      <p>이용자는 언제든지 아래의 권리를 행사할 수 있습니다.</p>
+      <ul class="pp-num-list">
+        <li><span><strong>열람 요청:</strong> 본인의 개인정보 처리 현황을 열람할 수 있습니다.</span></li>
+        <li><span><strong>정정·삭제 요청:</strong> 잘못된 정보의 정정 또는 삭제를 요청할 수 있습니다.</span></li>
+        <li><span><strong>처리 정지 요청:</strong> 개인정보 처리의 정지를 요청할 수 있습니다.</span></li>
+        <li><span><strong>동의 철회:</strong> 개인정보 수집·이용 동의를 철회할 수 있습니다.</span></li>
+      </ul>
+      <div class="pp-highlight-box">
+        권리 행사는 이메일(barotv101@gmail.com) 또는 채널톡을 통해 요청하시면 영업일 기준 <strong>5일 이내</strong> 처리합니다.
+      </div>
+    </section>
+
+    <!-- 제7조 -->
+    <section class="pp-article" id="pp-a7">
+      <div class="pp-art-head">
+        <span class="pp-art-badge">제7조</span>
+        <h2>쿠키 및 분석 도구</h2>
+      </div>
+      <ul class="pp-num-list">
+        <li>
+          <span>
+            <strong>쿠키(Cookie)</strong><br>
+            회사는 서비스 이용 편의를 위해 쿠키를 사용합니다. 이용자는 브라우저 설정을 통해 쿠키 저장을 거부할 수 있으나, 일부 서비스 이용이 제한될 수 있습니다.
+          </span>
+        </li>
+        <li>
+          <span>
+            <strong>Google Analytics</strong><br>
+            방문자 행동 분석을 위해 Google Analytics를 사용합니다. 수집된 데이터는 익명으로 처리되며, Google의 개인정보처리방침이 적용됩니다. 거부를 원하시면 Google Analytics 옵트아웃 도구를 이용하세요.
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 제8조 -->
+    <section class="pp-article" id="pp-a8">
+      <div class="pp-art-head">
+        <span class="pp-art-badge">제8조</span>
+        <h2>개인정보보호책임자</h2>
+      </div>
+      <div class="pp-biz-row"><span class="pp-biz-key">책임자</span><span class="pp-biz-val">박세진</span></div>
+      <div class="pp-biz-row"><span class="pp-biz-key">소속</span><span class="pp-biz-val">주식회사 에스제이엠플러스</span></div>
+      <div class="pp-biz-row"><span class="pp-biz-key">이메일</span><span class="pp-biz-val">barotv101@gmail.com</span></div>
+      <div class="pp-biz-row"><span class="pp-biz-key">전화</span><span class="pp-biz-val">070-4110-6861</span></div>
+      <div class="pp-biz-row"><span class="pp-biz-key">고객센터</span><span class="pp-biz-val">평일 10:00 - 17:00 (토·일·공휴일 휴무)</span></div>
+      <div class="pp-highlight-box" style="margin-top:16px;">
+        개인정보 침해 관련 신고 및 상담은 아래 기관에 문의하실 수 있습니다.<br>
+        - 개인정보보호위원회: privacy.go.kr / 국번없이 182<br>
+        - 한국인터넷진흥원 개인정보침해신고센터: 국번없이 118
+      </div>
+    </section>
+
+    <div class="pp-addendum">
+      <div>
+        <div class="pp-add-label">부칙 · Addendum</div>
+        <div class="pp-add-sub">본 방침은 아래 날짜부터 시행됩니다.</div>
+      </div>
+      <div class="pp-add-date">2026년 5월 1일 시행</div>
+    </div>
+
+    <div class="pp-footer">
+      Copyright 2026 SJMplus Corp. All rights reserved. · SEJINCLASS
+    </div>
+
+  </div>
+</div>
