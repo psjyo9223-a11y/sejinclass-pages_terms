@@ -1,9 +1,9 @@
 <style>
-.pp-wrap *,
-.pp-wrap *::before,
-.pp-wrap *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.sjm-wrap *,
+.sjm-wrap *::before,
+.sjm-wrap *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-.pp-wrap {
+.sjm-wrap {
   font-size: 15px;
   line-height: 1.85;
   color: #1e2624;
@@ -12,13 +12,13 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.pp-header {
+.sjm-header {
   background: #ffffff;
   border-bottom: 1px solid #daeee9;
   padding: 36px 24px 28px;
   text-align: center;
 }
-.pp-logo-tag {
+.sjm-logo-tag {
   display: inline-block;
   font-size: 11px;
   font-weight: 700;
@@ -30,34 +30,34 @@
   border-radius: 20px;
   margin-bottom: 12px;
 }
-.pp-header h1 {
+.sjm-header h1 {
   font-size: 26px;
   font-weight: 700;
   color: #1e2624;
   letter-spacing: -0.02em;
   margin: 0;
 }
-.pp-header-meta {
+.sjm-header-meta {
   margin-top: 6px;
   font-size: 12px;
   color: #5a6e6b;
   font-weight: 300;
 }
 
-.pp-inner {
+.sjm-inner {
   max-width: 720px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.pp-toc {
+.sjm-toc {
   background: #ffffff;
   border: 1px solid #daeee9;
   border-radius: 12px;
   padding: 22px 26px;
   margin: 28px 0 0;
 }
-.pp-toc-label {
+.sjm-toc-label {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -65,12 +65,12 @@
   color: #4dc4b0;
   margin-bottom: 12px;
 }
-.pp-toc-grid {
+.sjm-toc-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4px 20px;
 }
-.pp-toc-grid a {
+.sjm-toc-grid a {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -80,8 +80,8 @@
   padding: 5px 0;
   transition: color 0.18s;
 }
-.pp-toc-grid a:hover { color: #4dc4b0; }
-.pp-toc-n {
+.sjm-toc-grid a:hover { color: #4dc4b0; }
+.sjm-toc-n {
   font-size: 10px;
   font-weight: 700;
   color: #4dc4b0;
@@ -91,20 +91,20 @@
   flex-shrink: 0;
 }
 
-.pp-article {
+.sjm-article {
   background: #ffffff;
   border: 1px solid #daeee9;
   border-radius: 12px;
   padding: 28px 24px;
   margin-top: 14px;
 }
-.pp-art-head {
+.sjm-art-head {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 16px;
 }
-.pp-art-badge {
+.sjm-art-badge {
   font-size: 12px;
   font-weight: 700;
   color: #ffffff;
@@ -114,7 +114,7 @@
   flex-shrink: 0;
   white-space: nowrap;
 }
-.pp-art-head h2 {
+.sjm-art-head h2 {
   font-size: 13.5px;
   font-weight: 500;
   color: #5a6e6b;
@@ -122,15 +122,13 @@
   border: none;
   padding: 0;
 }
-.pp-article p {
+.sjm-article p {
   font-size: 14px;
   color: #5a6e6b;
   line-height: 1.9;
-  margin-bottom: 10px;
 }
-.pp-article p:last-child { margin-bottom: 0; }
 
-.pp-num-list {
+.sjm-num-list {
   list-style: none;
   counter-reset: nl;
   display: flex;
@@ -138,7 +136,7 @@
   padding: 0;
   margin: 0;
 }
-.pp-num-list > li {
+.sjm-num-list > li {
   counter-increment: nl;
   display: flex;
   gap: 12px;
@@ -150,9 +148,9 @@
   line-height: 1.85;
   list-style: none;
 }
-.pp-num-list > li:last-child { border-bottom: none; padding-bottom: 0; }
-.pp-num-list > li:first-child { padding-top: 0; }
-.pp-num-list > li::before {
+.sjm-num-list > li:last-child { border-bottom: none; padding-bottom: 0; }
+.sjm-num-list > li:first-child { padding-top: 0; }
+.sjm-num-list > li::before {
   content: counter(nl);
   font-size: 10px;
   font-weight: 700;
@@ -167,17 +165,50 @@
   flex-shrink: 0;
   margin-top: 3px;
 }
-.pp-wrap strong { color: #1e2624; font-weight: 500; }
+.sjm-wrap strong { color: #1e2624; font-weight: 500; }
 
-.pp-sub-list {
-  list-style: none;
+.sjm-refund-cards { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+.sjm-r-card {
+  background: #f5fafa;
+  border: 1px solid #daeee9;
+  border-radius: 8px;
+  padding: 13px 15px;
   display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin-top: 8px;
-  padding-left: 4px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
 }
-.pp-sub-list li {
+.sjm-r-card.full  { border-left: 3px solid #4dc4b0; }
+.sjm-r-card.part  { border-left: 3px solid #f0b54a; }
+.sjm-r-card.none  { border-left: 3px solid #e05a5a; }
+.sjm-r-left { flex: 1; }
+.sjm-r-period { font-size: 11.5px; color: #5a6e6b; margin-bottom: 3px; font-weight: 300; }
+.sjm-r-desc { font-size: 13.5px; color: #1e2624; font-weight: 500; line-height: 1.6; }
+.sjm-r-tag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.sjm-r-tag.green  { background: #e6f7f5; color: #4dc4b0; }
+.sjm-r-tag.yellow { background: #fff8e6; color: #c08a1a; }
+.sjm-r-tag.red    { background: #fdf0f0; color: #e05a5a; }
+
+.sjm-co-box {
+  background: #e6f7f5;
+  border: 1px solid #b2e4dc;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-top: 12px;
+  font-size: 13.5px;
+  color: #2a6b60;
+  line-height: 1.85;
+}
+
+.sjm-sub-list { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-top: 10px; padding-left: 4px; }
+.sjm-sub-list li {
   font-size: 13.5px;
   color: #5a6e6b;
   padding-left: 16px;
@@ -185,7 +216,7 @@
   line-height: 1.75;
   list-style: none;
 }
-.pp-sub-list li::before {
+.sjm-sub-list li::before {
   content: '';
   position: absolute;
   left: 0;
@@ -196,53 +227,17 @@
   background: #4dc4b0;
 }
 
-.pp-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 12px;
-  font-size: 13px;
-}
-.pp-table th {
-  background: #e6f7f5;
-  color: #2a6b60;
-  font-weight: 700;
-  padding: 10px 12px;
-  border: 1px solid #b2e4dc;
-  text-align: left;
-  font-size: 12px;
-}
-.pp-table td {
-  padding: 10px 12px;
-  border: 1px solid #daeee9;
-  color: #5a6e6b;
-  vertical-align: top;
-  line-height: 1.7;
-}
-.pp-table tr:nth-child(even) td { background: #f5fafa; }
-
-.pp-highlight-box {
-  background: #e6f7f5;
-  border: 1px solid #b2e4dc;
+.sjm-ip-box {
+  background: #1e2624;
+  color: #cde9e5;
   border-radius: 8px;
-  padding: 16px 18px;
-  margin-top: 12px;
+  padding: 18px 20px;
   font-size: 13.5px;
-  color: #2a6b60;
-  line-height: 1.85;
+  line-height: 1.9;
+  margin-top: 4px;
 }
 
-.pp-warn-box {
-  background: #fff8e6;
-  border: 1px solid #f0d080;
-  border-radius: 8px;
-  padding: 14px 16px;
-  margin-top: 12px;
-  font-size: 13.5px;
-  color: #7a5a00;
-  line-height: 1.85;
-}
-
-.pp-biz-row {
+.sjm-biz-row {
   display: grid;
   grid-template-columns: 130px 1fr;
   gap: 8px;
@@ -250,11 +245,11 @@
   border-bottom: 1px solid #daeee9;
   font-size: 13.5px;
 }
-.pp-biz-row:last-child { border-bottom: none; }
-.pp-biz-key { color: #4dc4b0; font-weight: 500; font-size: 12.5px; }
-.pp-biz-val { color: #5a6e6b; }
+.sjm-biz-row:last-child { border-bottom: none; }
+.sjm-biz-key { color: #4dc4b0; font-weight: 500; font-size: 12.5px; }
+.sjm-biz-val { color: #5a6e6b; }
 
-.pp-addendum {
+.sjm-addendum {
   background: #e6f7f5;
   border: 1px solid #b2e4dc;
   border-radius: 12px;
@@ -266,11 +261,11 @@
   flex-wrap: wrap;
   gap: 8px;
 }
-.pp-add-label { font-size: 11px; font-weight: 700; color: #4dc4b0; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 3px; }
-.pp-add-sub { font-size: 13px; color: #5a6e6b; }
-.pp-add-date { font-size: 15px; font-weight: 700; color: #4dc4b0; }
+.sjm-add-label { font-size: 11px; font-weight: 700; color: #4dc4b0; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 3px; }
+.sjm-add-sub { font-size: 13px; color: #5a6e6b; }
+.sjm-add-date { font-size: 15px; font-weight: 700; color: #4dc4b0; }
 
-.pp-footer {
+.sjm-footer {
   border-top: 1px solid #daeee9;
   background: #ffffff;
   text-align: center;
@@ -283,259 +278,194 @@
 }
 
 @media (max-width: 520px) {
-  .pp-toc-grid { grid-template-columns: 1fr; }
-  .pp-addendum { flex-direction: column; }
-  .pp-article { padding: 22px 16px; }
-  .pp-biz-row { grid-template-columns: 100px 1fr; }
-  .pp-table { font-size: 12px; }
-  .pp-table th, .pp-table td { padding: 8px; }
+  .sjm-toc-grid { grid-template-columns: 1fr; }
+  .sjm-r-card { flex-direction: column; align-items: flex-start; }
+  .sjm-biz-row { grid-template-columns: 100px 1fr; }
+  .sjm-addendum { flex-direction: column; }
+  .sjm-article { padding: 22px 16px; }
 }
 </style>
 
-<div class="pp-wrap">
-  <div class="pp-header">
-    <div class="pp-logo-tag">SEJINCLASS</div>
-    <h1>개인정보처리방침</h1>
-    <p class="pp-header-meta">Privacy Policy · 시행일 2026. 04. 26</p>
+<div class="sjm-wrap">
+  <div class="sjm-header">
+    <div class="sjm-logo-tag">SEJINCLASS</div>
+    <h1>이용약관</h1>
+    <p class="sjm-header-meta">Terms of Service · 시행일 2026. 04. 26</p>
   </div>
 
-  <div class="pp-inner">
+  <div class="sjm-inner">
 
-    <nav class="pp-toc">
-      <div class="pp-toc-label">목차</div>
-      <div class="pp-toc-grid">
-        <a href="#pp-a1"><span class="pp-toc-n">01</span>수집하는 개인정보</a>
-        <a href="#pp-a2"><span class="pp-toc-n">02</span>수집 및 이용 목적</a>
-        <a href="#pp-a3"><span class="pp-toc-n">03</span>보유 및 이용기간</a>
-        <a href="#pp-a4"><span class="pp-toc-n">04</span>제3자 제공</a>
-        <a href="#pp-a5"><span class="pp-toc-n">05</span>처리 위탁</a>
-        <a href="#pp-a6"><span class="pp-toc-n">06</span>이용자의 권리</a>
-        <a href="#pp-a7"><span class="pp-toc-n">07</span>쿠키 및 분석도구</a>
-        <a href="#pp-a8"><span class="pp-toc-n">08</span>개인정보보호책임자</a>
+    <nav class="sjm-toc">
+      <div class="sjm-toc-label">목차</div>
+      <div class="sjm-toc-grid">
+        <a href="#sjm-a1"><span class="sjm-toc-n">01</span>목적</a>
+        <a href="#sjm-a2"><span class="sjm-toc-n">02</span>정의</a>
+        <a href="#sjm-a3"><span class="sjm-toc-n">03</span>약관 게시 및 변경</a>
+        <a href="#sjm-a4"><span class="sjm-toc-n">04</span>결제 및 보안</a>
+        <a href="#sjm-a5"><span class="sjm-toc-n">05</span>환불 정책 및 절차</a>
+        <a href="#sjm-a6"><span class="sjm-toc-n">06</span>지식재산권</a>
+        <a href="#sjm-a7"><span class="sjm-toc-n">07</span>면책 및 분쟁해결</a>
+        <a href="#sjm-biz"><span class="sjm-toc-n">BIZ</span>사업자 정보</a>
       </div>
     </nav>
 
-    <!-- 제1조 -->
-    <section class="pp-article" id="pp-a1">
-      <div class="pp-art-head">
-        <span class="pp-art-badge">제1조</span>
-        <h2>수집하는 개인정보 항목</h2>
+    <section class="sjm-article" id="sjm-a1">
+      <div class="sjm-art-head">
+        <span class="sjm-art-badge">제1조</span>
+        <h2>목적</h2>
       </div>
-      <table class="pp-table">
-        <thead>
-          <tr>
-            <th>구분</th>
-            <th>수집 항목</th>
-            <th>수집 방법</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>회원가입</strong></td>
-            <td>이름, 이메일 주소, 비밀번호</td>
-            <td>회원가입 양식</td>
-          </tr>
-          <tr>
-            <td><strong>서비스 이용</strong></td>
-            <td>수강 이력, 학습 진도, 접속 로그</td>
-            <td>서비스 이용 중 자동 수집</td>
-          </tr>
-          <tr>
-            <td><strong>결제</strong></td>
-            <td>결제수단 정보, 거래 내역</td>
-            <td>결제 시 PG사(웰컴페이먼츠) 연동</td>
-          </tr>
-          <tr>
-            <td><strong>배송</strong></td>
-            <td>수령인 이름, 주소, 연락처</td>
-            <td>상품 주문 시 입력</td>
-          </tr>
-          <tr>
-            <td><strong>고객상담</strong></td>
-            <td>문의 내용, 이메일, 이름</td>
-            <td>채널톡 상담 시 입력</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="pp-warn-box">
-        회사는 만 14세 미만 아동의 개인정보를 수집하지 않습니다. 만 14세 미만은 서비스 이용이 제한됩니다.
-      </div>
+      <p>본 약관은 주식회사 에스제이엠플러스(SJMplus Corp., 이하 "회사")가 운영하는 세진클래스(SEJINCLASS) 브랜드를 통해 제공하는 온라인 이러닝 서비스 및 관련 상품의 이용과 관련하여 회사와 이용자의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
     </section>
 
-    <!-- 제2조 -->
-    <section class="pp-article" id="pp-a2">
-      <div class="pp-art-head">
-        <span class="pp-art-badge">제2조</span>
-        <h2>수집 및 이용 목적</h2>
+    <section class="sjm-article" id="sjm-a2">
+      <div class="sjm-art-head">
+        <span class="sjm-art-badge">제2조</span>
+        <h2>정의</h2>
       </div>
-      <ul class="pp-num-list">
-        <li><span>회원 가입 및 본인 확인, 서비스 제공</span></li>
-        <li><span>강의 수강 및 학습 이력 관리</span></li>
-        <li><span>결제 처리 및 환불 처리</span></li>
-        <li><span>교재·상품 배송</span></li>
-        <li><span>고객 문의 응대 및 불만 처리</span></li>
-        <li><span>서비스 개선 및 신규 서비스 개발</span></li>
-        <li><span>법령 및 약관 위반 행위 방지</span></li>
+      <ul class="sjm-num-list">
+        <li><span><strong>"서비스"</strong>란 회사가 제공하는 온라인 강의, 학습 콘텐츠 및 관련 교육 서비스를 의미합니다.</span></li>
+        <li><span><strong>"이용자"</strong>란 본 약관에 따라 서비스를 이용하는 회원 및 비회원을 말합니다.</span></li>
+        <li><span><strong>"상품"</strong>이란 서비스와 함께 제공되는 교재, 굿즈 등 물리적인 배송이 필요한 물품을 의미합니다.</span></li>
       </ul>
     </section>
 
-    <!-- 제3조 -->
-    <section class="pp-article" id="pp-a3">
-      <div class="pp-art-head">
-        <span class="pp-art-badge">제3조</span>
-        <h2>보유 및 이용기간</h2>
+    <section class="sjm-article" id="sjm-a3">
+      <div class="sjm-art-head">
+        <span class="sjm-art-badge">제3조</span>
+        <h2>약관의 게시 및 변경</h2>
       </div>
-      <table class="pp-table">
-        <thead>
-          <tr>
-            <th>구분</th>
-            <th>보유기간</th>
-            <th>근거</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>회원 정보</strong></td>
-            <td>회원 탈퇴 시까지</td>
-            <td>서비스 제공</td>
-          </tr>
-          <tr>
-            <td><strong>결제·거래 기록</strong></td>
-            <td>5년</td>
-            <td>전자상거래법</td>
-          </tr>
-          <tr>
-            <td><strong>소비자 불만·분쟁 기록</strong></td>
-            <td>3년</td>
-            <td>전자상거래법</td>
-          </tr>
-          <tr>
-            <td><strong>접속 로그</strong></td>
-            <td>3개월</td>
-            <td>통신비밀보호법</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="pp-highlight-box">
-        보유기간 종료 후 해당 정보는 지체 없이 파기하며, 전자적 파일은 복구 불가능한 방법으로 삭제합니다.
-      </div>
-    </section>
-
-    <!-- 제4조 -->
-    <section class="pp-article" id="pp-a4">
-      <div class="pp-art-head">
-        <span class="pp-art-badge">제4조</span>
-        <h2>개인정보의 제3자 제공</h2>
-      </div>
-      <p>회사는 원칙적으로 이용자의 개인정보를 외부에 제공하지 않습니다. 단, 아래의 경우는 예외로 합니다.</p>
-      <ul class="pp-num-list">
-        <li><span>이용자가 사전에 동의한 경우</span></li>
-        <li><span>법령에 의거하거나 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관이 요구하는 경우</span></li>
+      <ul class="sjm-num-list">
+        <li><span>회사는 본 약관을 이용자가 쉽게 확인할 수 있도록 서비스 하단(Footer)에 게시합니다.</span></li>
+        <li><span>회사는 관련 법령을 위배하지 않는 범위에서 본 약관을 개정할 수 있으며, 개정 시 최소 <strong>7일 전</strong>(이용자에게 불리한 경우 <strong>30일 전</strong>) 공지합니다.</span></li>
       </ul>
     </section>
 
-    <!-- 제5조 -->
-    <section class="pp-article" id="pp-a5">
-      <div class="pp-art-head">
-        <span class="pp-art-badge">제5조</span>
-        <h2>개인정보 처리 위탁</h2>
+    <section class="sjm-article" id="sjm-a4">
+      <div class="sjm-art-head">
+        <span class="sjm-art-badge">제4조</span>
+        <h2>결제 및 보안</h2>
       </div>
-      <p>회사는 서비스 제공을 위해 아래와 같이 개인정보 처리를 위탁합니다.</p>
-      <table class="pp-table">
-        <thead>
-          <tr>
-            <th>수탁업체</th>
-            <th>위탁 업무</th>
-            <th>보유기간</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>웰컴페이먼츠</strong></td>
-            <td>결제 처리 및 거래 내역 관리</td>
-            <td>관련 법령에 따름</td>
-          </tr>
-          <tr>
-            <td><strong>채널코퍼레이션 (채널톡)</strong></td>
-            <td>고객 상담 및 문의 처리</td>
-            <td>위탁 계약 종료 시까지</td>
-          </tr>
-          <tr>
-            <td><strong>Google LLC</strong></td>
-            <td>방문자 분석 (Google Analytics)</td>
-            <td>수집일로부터 26개월</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- 제6조 -->
-    <section class="pp-article" id="pp-a6">
-      <div class="pp-art-head">
-        <span class="pp-art-badge">제6조</span>
-        <h2>이용자의 권리</h2>
-      </div>
-      <p>이용자는 언제든지 아래의 권리를 행사할 수 있습니다.</p>
-      <ul class="pp-num-list">
-        <li><span><strong>열람 요청:</strong> 본인의 개인정보 처리 현황을 열람할 수 있습니다.</span></li>
-        <li><span><strong>정정·삭제 요청:</strong> 잘못된 정보의 정정 또는 삭제를 요청할 수 있습니다.</span></li>
-        <li><span><strong>처리 정지 요청:</strong> 개인정보 처리의 정지를 요청할 수 있습니다.</span></li>
-        <li><span><strong>동의 철회:</strong> 개인정보 수집·이용 동의를 철회할 수 있습니다.</span></li>
+      <ul class="sjm-num-list">
+        <li><span>이용자는 회사가 제공하는 안전한 결제 수단(신용카드, 계좌이체 등)을 통해 이용 대금을 지급합니다.</span></li>
+        <li><span>회사는 이용자의 결제 정보를 암호화하며 개인정보처리방침에 따라 엄격히 관리합니다.</span></li>
       </ul>
-      <div class="pp-highlight-box">
-        권리 행사는 이메일(barotv101@gmail.com) 또는 채널톡을 통해 요청하시면 영업일 기준 <strong>5일 이내</strong> 처리합니다.
-      </div>
     </section>
 
-    <!-- 제7조 -->
-    <section class="pp-article" id="pp-a7">
-      <div class="pp-art-head">
-        <span class="pp-art-badge">제7조</span>
-        <h2>쿠키 및 분석 도구</h2>
+    <section class="sjm-article" id="sjm-a5">
+      <div class="sjm-art-head">
+        <span class="sjm-art-badge">제5조</span>
+        <h2>환불 정책 및 절차</h2>
       </div>
-      <ul class="pp-num-list">
+      <ul class="sjm-num-list">
         <li>
           <span>
-            <strong>쿠키(Cookie)</strong><br>
-            회사는 서비스 이용 편의를 위해 쿠키를 사용합니다. 이용자는 브라우저 설정을 통해 쿠키 저장을 거부할 수 있으나, 일부 서비스 이용이 제한될 수 있습니다.
+            <strong>환불 신청</strong><br>
+            홈페이지 내 고객문의 게시판 또는 채널톡 상담을 통해 신청해야 합니다.
+          </span>
+        </li>
+        <li>
+          <span style="width:100%">
+            <strong>콘텐츠(온라인 강의) 환불</strong>
+            <div class="sjm-refund-cards">
+              <div class="sjm-r-card full">
+                <div class="sjm-r-left">
+                  <div class="sjm-r-period">결제 후 7일 이내 &amp; 2강 미만 수강</div>
+                  <div class="sjm-r-desc">전액 환불</div>
+                </div>
+                <span class="sjm-r-tag green">100% 환불</span>
+              </div>
+              <div class="sjm-r-card part">
+                <div class="sjm-r-left">
+                  <div class="sjm-r-period">결제 후 7일 초과 ~ 15일 이내</div>
+                  <div class="sjm-r-desc">기 수강 분량 비례 차감 + 위약금(결제금액의 10%) 공제 후 환불</div>
+                </div>
+                <span class="sjm-r-tag yellow">부분 환불</span>
+              </div>
+              <div class="sjm-r-card none">
+                <div class="sjm-r-left">
+                  <div class="sjm-r-period">결제 후 15일 초과</div>
+                  <div class="sjm-r-desc">환불 불가</div>
+                </div>
+                <span class="sjm-r-tag red">환불 불가</span>
+              </div>
+            </div>
+          </span>
+        </li>
+        <li>
+          <span style="width:100%">
+            <strong>교재 및 패키지(오프라인 상품) 반품</strong>
+            <ul class="sjm-sub-list">
+              <li><strong>반품 방법:</strong> 반품 신청 시 회사가 지정한 택배사를 통해 자동수거가 진행됩니다.</li>
+              <li><strong>배송비 부담:</strong> 고객 변심에 의한 반품 시 왕복 배송비는 이용자가 부담하며 환불 금액에서 차감됩니다. (제품 하자·오배송 제외)</li>
+              <li><strong>반품 불가 조건:</strong> 교재의 래핑 파손, 필기 흔적, 오염, 구성품 분실 등 상품 가치가 훼손된 경우 반품 및 환불이 불가합니다.</li>
+            </ul>
+          </span>
+        </li>
+        <li>
+          <span style="width:100%">
+            <strong>회사의 귀책 사유에 의한 환불</strong>
+            <div class="sjm-co-box">
+              회사의 <strong>폐업·서비스 종료·강의 폐강</strong> 등 회사 귀책 사유로 서비스를 제공할 수 없을 경우,
+              잔여 기간 또는 잔여 강의 수에 대하여 <strong>일할 계산하여 전액 환불</strong>합니다.
+            </div>
           </span>
         </li>
         <li>
           <span>
-            <strong>Google Analytics</strong><br>
-            방문자 행동 분석을 위해 Google Analytics를 사용합니다. 수집된 데이터는 익명으로 처리되며, Google의 개인정보처리방침이 적용됩니다. 거부를 원하시면 Google Analytics 옵트아웃 도구를 이용하세요.
+            <strong>환불 처리</strong><br>
+            회수된 상품의 상태 확인 후 영업일 기준 <strong>3~5일 이내</strong>에 동일한 결제 수단으로 환불됩니다.
           </span>
         </li>
       </ul>
     </section>
 
-    <!-- 제8조 -->
-    <section class="pp-article" id="pp-a8">
-      <div class="pp-art-head">
-        <span class="pp-art-badge">제8조</span>
-        <h2>개인정보보호책임자</h2>
+    <section class="sjm-article" id="sjm-a6">
+      <div class="sjm-art-head">
+        <span class="sjm-art-badge">제6조</span>
+        <h2>지식재산권</h2>
       </div>
-      <div class="pp-biz-row"><span class="pp-biz-key">책임자</span><span class="pp-biz-val">박세진</span></div>
-      <div class="pp-biz-row"><span class="pp-biz-key">소속</span><span class="pp-biz-val">주식회사 에스제이엠플러스</span></div>
-      <div class="pp-biz-row"><span class="pp-biz-key">이메일</span><span class="pp-biz-val">barotv101@gmail.com</span></div>
-      <div class="pp-biz-row"><span class="pp-biz-key">전화</span><span class="pp-biz-val">070-4110-6861</span></div>
-      <div class="pp-biz-row"><span class="pp-biz-key">고객센터</span><span class="pp-biz-val">평일 10:00 - 17:00 (토·일·공휴일 휴무)</span></div>
-      <div class="pp-highlight-box" style="margin-top:16px;">
-        개인정보 침해 관련 신고 및 상담은 아래 기관에 문의하실 수 있습니다.<br>
-        - 개인정보보호위원회: privacy.go.kr / 국번없이 182<br>
-        - 한국인터넷진흥원 개인정보침해신고센터: 국번없이 118
+      <div class="sjm-ip-box">
+        세진클래스(SEJINCLASS)의 모든 콘텐츠 및 브랜드 자산은 주식회사 에스제이엠플러스에 귀속되며,
+        무단 복제·배포·판매 시 저작권법에 따라 처벌받을 수 있습니다.
       </div>
     </section>
 
-    <div class="pp-addendum">
+    <section class="sjm-article" id="sjm-a7">
+      <div class="sjm-art-head">
+        <span class="sjm-art-badge">제7조</span>
+        <h2>면책 및 분쟁해결</h2>
+      </div>
+      <ul class="sjm-num-list">
+        <li><span>회사는 천재지변 등 불가항력적 사유로 서비스를 제공할 수 없는 경우 책임을 지지 않습니다.</span></li>
+        <li><span>본 약관과 관련하여 발생한 분쟁은 회사 소재지 관할 법원의 규정에 따릅니다.</span></li>
+      </ul>
+    </section>
+
+    <div class="sjm-addendum">
       <div>
-        <div class="pp-add-label">부칙 · Addendum</div>
-        <div class="pp-add-sub">본 방침은 아래 날짜부터 시행됩니다.</div>
+        <div class="sjm-add-label">부칙 · Addendum</div>
+        <div class="sjm-add-sub">본 약관은 아래 날짜부터 시행됩니다.</div>
       </div>
-      <div class="pp-add-date">2026년 4월 26일 시행</div>
+      <div class="sjm-add-date">2026년 4월 26일 시행</div>
     </div>
 
-    <div class="pp-footer">
+    <section class="sjm-article" id="sjm-biz">
+      <div class="sjm-art-head">
+        <span class="sjm-art-badge" style="background:#5a6e6b;">사업자</span>
+        <h2>사업자 정보</h2>
+      </div>
+      <div class="sjm-biz-row"><span class="sjm-biz-key">상호</span><span class="sjm-biz-val">주식회사 에스제이엠플러스 (SJMplus Corp.)</span></div>
+      <div class="sjm-biz-row"><span class="sjm-biz-key">대표자</span><span class="sjm-biz-val">박세진</span></div>
+      <div class="sjm-biz-row"><span class="sjm-biz-key">사업자등록번호</span><span class="sjm-biz-val">893-86-02044</span></div>
+      <div class="sjm-biz-row"><span class="sjm-biz-key">통신판매업신고</span><span class="sjm-biz-val">제 2026-서울서초-0951 호</span></div>
+      <div class="sjm-biz-row"><span class="sjm-biz-key">주소</span><span class="sjm-biz-val">서울특별시 서초구 매헌로 16, 하이브랜드 3층 344호 알05(양재동)</span></div>
+      <div class="sjm-biz-row"><span class="sjm-biz-key">전화</span><span class="sjm-biz-val">070-4110-6861</span></div>
+      <div class="sjm-biz-row"><span class="sjm-biz-key">이메일</span><span class="sjm-biz-val">barotv101@gmail.com</span></div>
+      <div class="sjm-biz-row"><span class="sjm-biz-key">고객센터</span><span class="sjm-biz-val">평일 10:00 - 17:00 (토·일·공휴일 휴무)</span></div>
+      <div class="sjm-biz-row"><span class="sjm-biz-key">개인정보보호책임자</span><span class="sjm-biz-val">박세진</span></div>
+    </section>
+
+    <div class="sjm-footer">
       Copyright 2026 SJMplus Corp. All rights reserved. · SEJINCLASS
     </div>
 
